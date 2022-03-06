@@ -5,10 +5,35 @@
 #######################################################
 
 def urlchecker(url):
-
-    # your code should go here
-
-    return True
+  list = url.split("://")
+  if "/" not in list[1]:
+    return False
+  if not url.startswith("http://") and not (url.startswith("https://")):
+    return False
+  if url.count("?") >1 or url.count("#")>1 :
+    return False 
+  if ' ' in url:
+    return False
+  if url.count("#")==1 and url.count("?")==1:
+      if (url.find("#") > url.find("?")):
+        return False
+  restOfUrl= list[1]
+  list2= restOfUrl.split("/")
+  #print(list2)
+  hostname=list2[0]
+  #print(hostname)
+  if hostname=="":# if hostname is empty 
+    return False
+  if ":" in list2[1]:
+    remainder=list2[1]
+    if remainder[-1]!= "/":
+      return False
+  if ":" in hostname:
+    list3= hostname.split(":")
+    #print(list3)
+    if not list3[1].isdigit():
+      return False
+  return True 
 
 
 def testurl():
@@ -37,4 +62,6 @@ def testurl():
             print(f"{url} is not valid, but your function claimed the opposite")
         else:
             print(f"{url} - ok")
+          
 
+testurl()
