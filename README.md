@@ -9,5 +9,6 @@ I thought the directions and instructions were very clear therefore
 it made it wasy to solve the problems 
 ## Feedback
 
-Once you commit and submit your work to Github, I'll update this section with feedback.
+S
 
+I love the computer player for ghost!  Well done!
